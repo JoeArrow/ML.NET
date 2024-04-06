@@ -11,4 +11,10 @@
     <PackageReference Include="Microsoft.ML.LightGbm" Version="1.5.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\titanic.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
