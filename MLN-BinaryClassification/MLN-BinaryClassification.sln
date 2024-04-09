@@ -6,6 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLN-BinaryClassification", "MLN-BinaryClassification\MLN-BinaryClassification.csproj", "{9CD1EC03-FF1F-47EF-8800-CE1FBC2FCE30}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Folder", "Solution Folder", "{6E5AE7A3-D6F6-4E0E-A6DA-A00580F3D273}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLN-BinaryClassification_Tests", "MLN-BinaryClassification_Tests\MLN-BinaryClassification_Tests.csproj", "{72A8F17C-32C1-432F-8370-095F76B56D62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +22,10 @@ Global
 		{9CD1EC03-FF1F-47EF-8800-CE1FBC2FCE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CD1EC03-FF1F-47EF-8800-CE1FBC2FCE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CD1EC03-FF1F-47EF-8800-CE1FBC2FCE30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72A8F17C-32C1-432F-8370-095F76B56D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A8F17C-32C1-432F-8370-095F76B56D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A8F17C-32C1-432F-8370-095F76B56D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A8F17C-32C1-432F-8370-095F76B56D62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

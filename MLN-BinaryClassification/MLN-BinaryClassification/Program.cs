@@ -9,7 +9,7 @@ namespace MLN_BinaryClassification
         static void Main(string[] args)
         {
             var ml = new ML();
-            ml.Seup();
+            ml.Seup(@"..\..\..\Data\titanic.mdl");
 
             ml.MakePrediction(new Input { Age = 60.0f, Gender = "female", FareClass = 1.0f });
             ml.MakePrediction(new Input { Age = 60.0f, Gender = "female", FareClass = 2.0f });
@@ -34,7 +34,7 @@ namespace MLN_BinaryClassification
             ml.MakePrediction(new Input { Age = 12.0f, Gender = "male", FareClass = 1.0f });
             ml.MakePrediction(new Input { Age = 12.0f, Gender = "male", FareClass = 2.0f });
             ml.MakePrediction(new Input { Age = 12.0f, Gender = "male", FareClass = 3.0f });
-
+            
             Console.WriteLine($"{cr}{cr}");
         }
     }

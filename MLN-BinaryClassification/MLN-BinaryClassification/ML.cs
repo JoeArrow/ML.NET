@@ -14,16 +14,15 @@ namespace MLN_BinaryClassification
         private PredictionEngine<Input, Output> predictor;
         private MLContext context = new MLContext(seed: 0);
         private readonly string _path = "..\\..\\..\\Data\\titanic.csv";
-        private readonly string _modelPath = "..\\..\\..\\Data\\titanic.mdl";
 
         // ------------------------------------------------
 
-        public void Seup()
+        public void Seup(string modelPath)
         {
-            if(File.Exists(_modelPath))
+            if(File.Exists(modelPath))
             {
                 Console.WriteLine($"{cr}Model pre-trained...{cr}");
-                model = context.Model.Load(_modelPath, out _);
+                model = context.Model.Load(modelPath, out _);
             }
             else
             {
@@ -60,9 +59,9 @@ namespace MLN_BinaryClassification
 
                 model = pipeline.Fit(trainData);
 
-                if(!File.Exists(_modelPath))
+                if(!File.Exists(modelPath))
                 {
-                    context.Model.Save(model, trainData.Schema, _modelPath);
+                    context.Model.Save(model, trainData.Schema, modelPath);
                 }
 
                 Evaluate();
@@ -88,10 +87,11 @@ namespace MLN_BinaryClassification
 
         // ------------------------------------------------
 
-        public void MakePrediction(Input input)
+        public Output MakePrediction(Input input)
         {
-            var output = predictor.Predict(input);
-            Console.WriteLine($"Probability that a {input.Age}-year old {input.Gender} traveling in {input.GetFareClass()} would survive:\t{output.Probability:P1}");
+            var retVal = predictor.Predict(input);
+            Console.WriteLine($"Probability that a {input.Age}-year old {input.Gender} traveling in {input.GetFareClass()} would survive:\t{retVal.Probability:P1}");
+            return retVal;
         }
     }
 }
