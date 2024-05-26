@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 ﻿
+=======
+﻿using Microsoft.ML;
+using Microsoft.ML.Data;
+using Microsoft.ML.Transforms;
+
+>>>>>>> 025c9c0a9547b90d26f5c6f6633eb1848b5e998f
 using System;
+using System.IO;
 using System.Linq;
 
 using Microsoft.ML;
@@ -10,9 +18,14 @@ namespace MLN_BinaryClassification
 {
     class Program
     {
+<<<<<<< HEAD
         static readonly string _path = @".\Data\titanic.csv";
         private static readonly string cr = Environment.NewLine;
         private static PredictionEngine<Input, Output> _predictor;
+=======
+        static readonly string _path = "..\\..\\..\\Data\\titanic.csv";
+        static readonly string _model = "..\\..\\..\\Data\\titanic.mdl";
+>>>>>>> 025c9c0a9547b90d26f5c6f6633eb1848b5e998f
 
         static void Main(string[] args)
         {
@@ -48,6 +61,12 @@ namespace MLN_BinaryClassification
                 .Append(context.BinaryClassification.Trainers.LightGbm());
 
             Console.WriteLine("Training the model...");
+
+            if(!File.Exists(_model))
+            {
+                //context.Data.Save();
+            }
+                
             var model = pipeline.Fit(trainData);
 
             // ------------------
@@ -62,6 +81,7 @@ namespace MLN_BinaryClassification
 
             // ---------------------------------
             // Use the model to make predictions
+<<<<<<< HEAD
 
             _predictor = context.Model.CreatePredictionEngine<Input, Output>(model);
 
@@ -151,4 +171,21 @@ namespace MLN_BinaryClassification
         public bool Prediction { get; set; }
         public float Probability { get; set; }
     }
+=======
+
+            var predictor = context.Model.CreatePredictionEngine<Input, Output>(model);
+
+            var input = new Input { Age = 60.0f, Gender = "female", FareClass = 1.0f };
+            var output = predictor.Predict(input);
+
+            Console.WriteLine();
+            Console.WriteLine($"Probability that a {input.Age}-year old {input.Gender} traveling in first class will survive: {output.Probability:P1}");
+
+            input = new Input { Age = 60.0f, Gender = "male", FareClass = 3.0f };
+            output = predictor.Predict(input);
+
+            Console.WriteLine($"Probability that a {input.Age}-year old {input.Gender} traveling in third class will survive: {output.Probability:P1}");
+        }
+    }
+>>>>>>> 025c9c0a9547b90d26f5c6f6633eb1848b5e998f
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.ML;
 using Microsoft.ML.AutoML;
 using Microsoft.ML.Data;
+
 using System;
 
 namespace AutoML
@@ -52,32 +53,5 @@ namespace AutoML
             Console.WriteLine($"Predicted price: ${prediction.Price:n0}; Actual price: $665,000");
             Console.WriteLine();
         }
-    }
-
-    public class Input
-    {
-        [LoadColumn(1)]
-        public float Bathrooms;
-
-        [LoadColumn(2)]
-        public float Bedrooms;
-
-        [LoadColumn(3)]
-        public float FinishedSquareFeet;
-
-        [LoadColumn(5), ColumnName("Label")]
-        public float LastSoldPrice;
-
-        [LoadColumn(9)]
-        public float TotalRooms;
-
-        [LoadColumn(10)]
-        public string UseCode;
-    }
-
-    public class Output
-    {
-        [ColumnName("Score")]
-        public float Price;
     }
 }
