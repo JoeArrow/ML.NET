@@ -7,6 +7,7 @@ namespace DigitClassification
 {
     class Program
     {
+        static readonly string cr = Environment.NewLine;
         static readonly string _trainDataPath = "..\\..\\..\\Data\\mnist-digits-train.csv";
         static readonly string _testDataPath = "..\\..\\..\\Data\\mnist-digits-test.csv";
 
@@ -17,6 +18,7 @@ namespace DigitClassification
             var testData = context.Data.LoadFromTextFile<Input>(_testDataPath, hasHeader: false, separatorChar: ',');
 
             // Build and train the model
+
             var pipeline = context.Transforms.Conversion.MapValueToKey("Label", keyOrdinality: KeyOrdinality.ByValue)
                 .Append(context.Transforms.Concatenate("Features", "PixelValues"))
                 .Append(context.MulticlassClassification.Trainers.SdcaMaximumEntropy())
@@ -26,16 +28,16 @@ namespace DigitClassification
             var model = pipeline.Fit(trainData);
 
             // Evaluate the model
+
             var predictions = model.Transform(testData);
             var metrics = context.MulticlassClassification.Evaluate(predictions);
 
-            Console.WriteLine();
-            Console.WriteLine($"Macro accuracy = {metrics.MacroAccuracy:P2}");
+            Console.WriteLine($"{cr}Macro accuracy = {metrics.MacroAccuracy:P2}");
             Console.WriteLine($"Micro accuracy = {metrics.MicroAccuracy:P2}");
-            Console.WriteLine(metrics.ConfusionMatrix.GetFormattedConfusionTable());
-            Console.WriteLine();
+            Console.WriteLine($"{metrics.ConfusionMatrix.GetFormattedConfusionTable()}{cr}");
 
             // Use the model to make a prediction
+
             var predictor = context.Model.CreatePredictionEngine<Input, Output>(model);
 
             var input = new Input
@@ -56,6 +58,7 @@ namespace DigitClassification
             var prediction = predictor.Predict(input);
 
             int i = 0;
+
             foreach (var score in prediction.Scores)
             {
                 Console.WriteLine($"{i++} - {score:N8}");

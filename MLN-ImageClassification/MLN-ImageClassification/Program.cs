@@ -9,6 +9,7 @@ namespace ImageClassification
 {
     class Program
     {
+        private static readonly string cr = Environment.NewLine;
         private static readonly string _imagePath = "..\\..\\..\\Data";
         private static readonly string _savePath = "..\\..\\..\\Model\\hotdog.zip";
         private static readonly string _predictedLabelColumnName = "PredictedLabel";
@@ -19,29 +20,33 @@ namespace ImageClassification
             var context = new MLContext(seed: 0);
 
             // Create a DataView containing the image paths and labels
+
             var input = LoadLabeledImagesFromPath(_imagePath);
             var data = context.Data.LoadFromEnumerable(input);
             data = context.Data.ShuffleRows(data);
 
             // Load the images and convert the labels to keys to serve as categorical values
+
             var images = context.Transforms.Conversion.MapValueToKey(inputColumnName: nameof(Input.Label), outputColumnName: _keyColumnName)
                 .Append(context.Transforms.LoadRawImageBytes(inputColumnName: nameof(Input.ImagePath), outputColumnName: nameof(Input.Image), imageFolder: _imagePath))
                 .Fit(data).Transform(data);
 
             // Split the dataset for training and testing
+
             var trainTestData = context.Data.TrainTestSplit(images, testFraction: 0.2, seed: 1);
             var trainData = trainTestData.TrainSet;
             var testData = trainTestData.TestSet;
 
             // Create an image-classification pipeline and train the model
+
             var options = new ImageClassificationTrainer.Options()
             {
-                FeatureColumnName = nameof(Input.Image),
-                LabelColumnName = _keyColumnName,
+                TestOnTrainSet = false,
                 ValidationSet = testData,
-                Arch = ImageClassificationTrainer.Architecture.ResnetV2101, // Pretrained DNN
+                LabelColumnName = _keyColumnName,
+                FeatureColumnName = nameof(Input.Image),
                 MetricsCallback = (metrics) => Console.WriteLine(metrics),
-                TestOnTrainSet = false
+                Arch = ImageClassificationTrainer.Architecture.ResnetV2101, // Pretrained DNN
             };
 
             var pipeline = context.MulticlassClassification.Trainers.ImageClassification(options)
@@ -51,6 +56,7 @@ namespace ImageClassification
             var model = pipeline.Fit(trainData);
 
             // Evaluate the model and show the results
+
             var predictions = model.Transform(testData);
             var metrics = context.MulticlassClassification.Evaluate(predictions, labelColumnName: _keyColumnName, predictedLabelColumnName: _predictedLabelColumnName);
 
@@ -61,8 +67,8 @@ namespace ImageClassification
             Console.WriteLine();
 
             // Save the model
-            Console.WriteLine();
-            Console.WriteLine("Saving the model...");
+
+            Console.WriteLine($"{cr}Saving the model...{cr}{_savePath}");
             context.Model.Save(model, trainData.Schema, _savePath);
         }
 
