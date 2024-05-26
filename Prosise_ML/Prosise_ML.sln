@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLN-AutoML", "..\MLN-AutoML\MLN-AutoML\MLN-AutoML.csproj", "{2B5952E0-F1DF-4FA3-A223-DD269F4C9CF7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLN-BinaryClassification", "..\MLN-BinaryClassification\MLN-BinaryClassification\MLN-BinaryClassification.csproj", "{CAAFC5EA-5143-4FB9-8434-3524B303BF54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLN-DigitClassification", "..\MLN-DigitClassification\MLN-DigitClassification\MLN-DigitClassification.csproj", "{765601BF-0997-4039-A465-8156A787E8CE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLN-ImageClassification", "..\MLN-ImageClassification\MLN-ImageClassification\MLN-ImageClassification.csproj", "{AF976BEE-6A68-4866-9D58-8FA76B0A2145}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLN-MultipleRegression", "..\MLN-MultipleRegression\MLN-MultipleRegression\MLN-MultipleRegression.csproj", "{B2482A65-DCF4-467A-B51A-866CE029701F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLN-NotHotDog", "..\MLN-NotHotDog\MLN-NotHotDog\MLN-NotHotDog.csproj", "{1390AA62-25E1-4804-9B84-3F39A4547FEE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLN-SentimentAnalysis", "..\MLN-SentimentAnalysis\MLN-SentimentAnalysis\MLN-SentimentAnalysis.csproj", "{B64BC575-63EC-4011-824A-F9CA1CE64BA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2AE77386-DD30-4E2A-BF54-C450336F7921}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLN-SimpleRegression", "..\MLN-SimpleRegression\MLN-SimpleRegression\MLN-SimpleRegression.csproj", "{8D66645E-4A20-4213-BB16-F87F054CBAEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLN-SpamClassifier", "..\MLN-SpamClassifier\MLN-SpamClassifier\MLN-SpamClassifier.csproj", "{BBDA65F9-0613-4C71-9911-38BB370DD140}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B5952E0-F1DF-4FA3-A223-DD269F4C9CF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B5952E0-F1DF-4FA3-A223-DD269F4C9CF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B5952E0-F1DF-4FA3-A223-DD269F4C9CF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B5952E0-F1DF-4FA3-A223-DD269F4C9CF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAAFC5EA-5143-4FB9-8434-3524B303BF54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAAFC5EA-5143-4FB9-8434-3524B303BF54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAAFC5EA-5143-4FB9-8434-3524B303BF54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAAFC5EA-5143-4FB9-8434-3524B303BF54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{765601BF-0997-4039-A465-8156A787E8CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{765601BF-0997-4039-A465-8156A787E8CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{765601BF-0997-4039-A465-8156A787E8CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{765601BF-0997-4039-A465-8156A787E8CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF976BEE-6A68-4866-9D58-8FA76B0A2145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF976BEE-6A68-4866-9D58-8FA76B0A2145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF976BEE-6A68-4866-9D58-8FA76B0A2145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF976BEE-6A68-4866-9D58-8FA76B0A2145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2482A65-DCF4-467A-B51A-866CE029701F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2482A65-DCF4-467A-B51A-866CE029701F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2482A65-DCF4-467A-B51A-866CE029701F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2482A65-DCF4-467A-B51A-866CE029701F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1390AA62-25E1-4804-9B84-3F39A4547FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1390AA62-25E1-4804-9B84-3F39A4547FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1390AA62-25E1-4804-9B84-3F39A4547FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1390AA62-25E1-4804-9B84-3F39A4547FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B64BC575-63EC-4011-824A-F9CA1CE64BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B64BC575-63EC-4011-824A-F9CA1CE64BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B64BC575-63EC-4011-824A-F9CA1CE64BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B64BC575-63EC-4011-824A-F9CA1CE64BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D66645E-4A20-4213-BB16-F87F054CBAEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D66645E-4A20-4213-BB16-F87F054CBAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D66645E-4A20-4213-BB16-F87F054CBAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D66645E-4A20-4213-BB16-F87F054CBAEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBDA65F9-0613-4C71-9911-38BB370DD140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBDA65F9-0613-4C71-9911-38BB370DD140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBDA65F9-0613-4C71-9911-38BB370DD140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBDA65F9-0613-4C71-9911-38BB370DD140}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {260D6CB0-E83C-4489-9C34-A35605AF50FF}
+	EndGlobalSection
+EndGlobal
